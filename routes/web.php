@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GajiController;
+use App\Http\Controllers\Master\DataKaryawanController;
 use App\Http\Controllers\ResignController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -47,5 +48,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/data-table', 'dataTable')->name('data-table');
         Route::get('/get-aktif-karyawan-list', 'getAktifKaryawanList')->name('get-aktif-karyawan-list');
         Route::post('/store', 'store')->name('store');
+    });
+
+    Route::controller(DataKaryawanController::class)->prefix('/data_karyawan')->name('data_karyawan.')->group(function () {
+        Route::get('/data', 'data')->name('data');
+        Route::get('/', 'index')->name('index');
+        Route::post('/resign-sementara', 'resign-sementara')->name('resign');
+        Route::get('/{id}/edit', 'edit')->name('edit');
+        Route::delete('/{id}', 'destroy')->name('destroy');
     });
 });

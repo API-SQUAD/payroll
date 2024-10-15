@@ -45,59 +45,52 @@
                     style="font-size: 10px">
                     <thead>
                         <tr>
-                            <td rowspan="2" class="text-center">No.</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">NIK</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">Nama</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">Jabatan</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">Divisi / Cabang</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">Tgl Lahir</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">Status Kel.</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">Tanggal Masuk</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">Tanggal Akhir PKWT
-                            </td>
-                            {{-- <td rowspan="2" class="text-center" style="background-color: #fafa7d;">Bank</td> --}}
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">Rekening</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">Bruto</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">Gapok</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">Tunj. Tetap</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">Total Hari</td>
-                            <td rowspan="2" class="text-center">GAJI POKOK</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>HARI KERJA</b>
-                            </td>
-                            <td rowspan="2" class="text-center">GAJI POKOK EFEKTIF</td>
-                            <td colspan="3" class="text-center">TUNJANGAN</td>
-                            <td rowspan="2" class="text-center">GAJI BRUTO</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">GAJI PERHARI</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">GAJI SETELAH DIPOTONG
-                                HARI</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">LEMBUR, ROLLING, DLL
-                            </td>
-                            <td colspan="3" class="text-center" style="background-color: #fafa7d;">POTONGAN</td>
-                            <td colspan="3" class="text-center" style="background-color: #fafa7d;">KOREKSI (+/-)</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;">TOTAL GAJI</td>
-                            <td colspan="8" class="text-center" style="background-color: #fafa7d;">JAMSOSTEK (DARI GAJI
-                                POKOK)</td>
-                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>TOTAL TAKE HOME
-                                    PAY</b></td>
+                            <td rowspan="2" class="text-center"><b>No.</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>NIK</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>Nama</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>Jabatan</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>Divisi / Cabang</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>Tgl Lahir</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>Status Kel.</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>Tanggal Masuk</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>Tanggal Akhir PKWT</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>Rekening</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>Bruto</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>Gapok</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>Tunj. Tetap</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>Total Hari</b></td>
+                            <td rowspan="2" class="text-center"><b>GAJI POKOK</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>HARI KERJA</b></td>
+                            <td rowspan="2" class="text-center"><b>GAJI POKOK EFEKTIF</b></td>
+                            <td colspan="3" class="text-center"><b>TUNJANGAN</b></td>
+                            <td rowspan="2" class="text-center"><b>GAJI BRUTO</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>GAJI PERHARI</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>GAJI SETELAH DIPOTONG HARI</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>LEMBUR, ROLLING, DLL</b></td>
+                            <td colspan="3" class="text-center" style="background-color: #fafa7d;"><b>POTONGAN</b></td>
+                            <td colspan="3" class="text-center" style="background-color: #fafa7d;"><b>KOREKSI (+/-)</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b>TOTAL GAJI</b></td>
+                            <td colspan="8" class="text-center" style="background-color: #fafa7d;"><b>JAMSOSTEK (DARI GAJI POKOK)</b></td>
+                            <td rowspan="2" class="text-center" style="background-color: #fafa7d;"><b><b>TOTAL TAKE HOME PAY</b></b></td>
                         </tr>
                         <tr>
-                            <td class="text-center">Tetap</td>
-                            <td class="text-center">Transport</td>
-                            <td class="text-center">Jabatan</td>
-                            <td class="text-center" style="background-color: #fafa7d;">No.</td>
-                            <td class="text-center" style="background-color: #fafa7d;">Total</td>
-                            <td class="text-center" style="background-color: #fafa7d;">Keterangan</td>
-                            <td class="text-center" style="background-color: #fafa7d;">No.</td>
-                            <td class="text-center" style="background-color: #fafa7d;">Total</td>
-                            <td class="text-center" style="background-color: #fafa7d;">Keterangan</td>
-                            <td class="text-center" style="background-color: #fafa7d;">JKK (0.24%)</td>
-                            <td class="text-center" style="background-color: #fafa7d;">JKM (0.30%)</td>
-                            <td class="text-center" style="background-color: #fafa7d;">BPJS (4.0%)</td>
-                            <td class="text-center" style="background-color: #fafa7d;">JHT (3.7%)</td>
-                            <td class="text-center" style="background-color: #fafa7d;">JPN (2%)</td>
-                            <td class="text-center" style="background-color: #fafa7d;">JPN (1%)</td>
-                            <td class="text-center" style="background-color: #fafa7d;">JHT (2.0%)</td>
-                            <td class="text-center" style="background-color: #fafa7d;">BPJS (1%)</td>
+                            <td class="text-center"><b>Tetap</b></td>
+                            <td class="text-center"><b>Transport</b></td>
+                            <td class="text-center"><b>Jabatan</b></td>
+                            <td class="text-center" style="background-color: #fafa7d;"><b>No.</b></td>
+                            <td class="text-center" style="background-color: #fafa7d;"><b>Total</b></td>
+                            <td class="text-center" style="background-color: #fafa7d;"><b>Keterangan</b></td>
+                            <td class="text-center" style="background-color: #fafa7d;"><b>No.</b></td>
+                            <td class="text-center" style="background-color: #fafa7d;"><b>Total</b></td>
+                            <td class="text-center" style="background-color: #fafa7d;"><b>Keterangan</b></td>
+                            <td class="text-center" style="background-color: #fafa7d;"><b>JKK (0.24%)</b></td>
+                            <td class="text-center" style="background-color: #fafa7d;"><b>JKM (0.30%)</b></td>
+                            <td class="text-center" style="background-color: #fafa7d;"><b>BPJS (4.0%)</b></td>
+                            <td class="text-center" style="background-color: #fafa7d;"><b>JHT (3.7%)</b></td>
+                            <td class="text-center" style="background-color: #fafa7d;"><b>JPN (2%)</b></td>
+                            <td class="text-center" style="background-color: #fafa7d;"><b>JPN (1%)</b></td>
+                            <td class="text-center" style="background-color: #fafa7d;"><b>JHT (2.0%)</b></td>
+                            <td class="text-center" style="background-color: #fafa7d;"><b>BPJS (1%)</b></td>
                         </tr>
                     </thead>
 
@@ -337,8 +330,8 @@
                     name: 'nama',
                     render: function(data, type, row) {
                         var html = `
-                            <button onclick="getModalData('${row.id_karyawan}')">
-                                ${data}
+                            <button onclick="getModalData('${row.id_karyawan}')" class="btn-block">
+                                <b>${data}</b>
                             </button>
                         `
                         return html;
@@ -346,127 +339,149 @@
                 },
                 {
                     data: 'jabatan',
-                    name: 'jabatan'
+                    name: 'jabatan',
+                    class: 'text-center'
                 },
                 {
                     data: 'divisi_region',
-                    name: 'divisi_region'
+                    name: 'divisi_region',
+                    class: 'text-center'
                 },
                 {
                     data: 'tanggal_lahir',
-                    name: 'tanggal_lahir'
+                    name: 'tanggal_lahir',
+                    class: 'text-center'
                 },
                 {
                     data: 'stat_ptkp',
-                    name: 'stat_ptkp'
+                    name: 'stat_ptkp',
+                    class: 'text-center'
                 },
                 {
                     data: 'tgl_masuk',
-                    name: 'tgl_masuk'
+                    name: 'tgl_masuk',
+                    class: 'text-center'
                 },
                 {
                     data: 'tgl_akhir_pkwt',
-                    name: 'tgl_akhir_pkwt'
+                    name: 'tgl_akhir_pkwt',
+                    class: 'text-center'
                 },
                 {
                     data: 'rek_final',
-                    name: 'rek_final'
+                    name: 'rek_final',
+                    class: 'text-center'
                 },
                 {
                     data: 'bruto',
                     name: 'bruto',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'gapok',
                     name: 'gapok',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'tunj_tetap',
                     name: 'tunj_tetap',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'total_hari',
-                    name: 'total_hari'
+                    name: 'total_hari',
+                    class: 'text-center'
                 },
                 {
                     data: 'gaji_pokok',
                     name: 'gaji_pokok',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'hari_kerja',
-                    name: 'hari_kerja'
+                    name: 'hari_kerja',
+                    class: 'text-center'
                 },
                 {
                     data: 'gaji_pokok_efektif',
                     name: 'gaji_pokok_efektif',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'tunjangan_tetap',
                     name: 'tunjangan_tetap',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'tunjangan_transport',
                     name: 'tunjangan_transport',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'tunjangan_jabatan',
                     name: 'tunjangan_jabatan',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'gaji_bruto',
                     name: 'gaji_bruto',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'gaji_perhari',
                     name: 'gaji_perhari',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'gaji_setelah_dipotong_hari',
                     name: 'gaji_setelah_dipotong_hari',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'lembur',
                     name: 'lembur',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'no_potongan',
                     name: 'no_potongan',
+                    class: 'text-center',
                     render: function(data, type, row) {
                         if(data !== null) {
                             return data.split(",").join("<br>");
@@ -478,6 +493,7 @@
                 {
                     data: 'total_potongan',
                     name: 'total_potongan',
+                    class: 'text-right',
                     render: function(data, type, row) {
                         if(data !== null) {
                             return data.split(",").join("<br>");
@@ -500,6 +516,7 @@
                 {
                     data: 'no_koreksi',
                     name: 'no_koreksi',
+                    class: 'text-center',
                     render: function(data, type, row) {
                         if(data !== null) {
                             return data.split(",").join("<br>");
@@ -511,6 +528,7 @@
                 {
                     data: 'total_koreksi',
                     name: 'total_koreksi',
+                    class: 'text-right',
                     render: function(data, type, row) {
                         if(data !== null) {
                             return data.split(",").join("<br>");
@@ -533,71 +551,81 @@
                 {
                     data: 'total_gaji',
                     name: 'total_gaji',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'jkk_024',
                     name: 'jkk_024',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'jkm_03',
                     name: 'jkm_03',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'bpjs_4',
                     name: 'bpjs_4',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'jht_37',
                     name: 'jht_37',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'jpn_2',
                     name: 'jpn_2',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'jpn_1',
                     name: 'jpn_1',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'jht_2',
                     name: 'jht_2',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'bpjs_1',
                     name: 'bpjs_1',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
                 {
                     data: 'total_thp',
                     name: 'total_thp',
+                    class: 'text-right',
                     render: function(data, type, row) {
-                        return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+                        return parseInt(data).toLocaleString('id-ID');
                     }
                 },
             ],
@@ -685,30 +713,30 @@
                     return intVal(a) + intVal(b);
                 }, 0);
 
-                $('#bruto').html('Rp ' + totalBruto.toLocaleString('id-ID'));
-                $('#gapok').html('Rp ' + totalGapok.toLocaleString('id-ID'));
-                $('#tunj_tetap').html('Rp ' + totalTunjTetap.toLocaleString('id-ID'));
+                $('#bruto').html(totalBruto.toLocaleString('id-ID'));
+                $('#gapok').html(totalGapok.toLocaleString('id-ID'));
+                $('#tunj_tetap').html(totalTunjTetap.toLocaleString('id-ID'));
                 $('#total_hari').html(totalHari);
                 $('#hari_kerja').html(totalHariKerja);
-                $('#gaji_pokok').html('Rp ' + totalGajiPokok.toLocaleString('id-ID'));
-                $('#gaji_pokok_efektif').html('Rp ' + totalGajiPokokEfektif.toLocaleString('id-ID'));
-                $('#tunjangan_tetap').html('Rp ' + totalTunjTetap.toLocaleString('id-ID'));
-                $('#tunjangan_transport').html('Rp ' + totalTunjTransport.toLocaleString('id-ID'));
-                $('#tunjangan_jabatan').html('Rp ' + totalTunjJabatan.toLocaleString('id-ID'));
-                $('#gaji_bruto').html('Rp ' + totalGajiBruto.toLocaleString('id-ID'));
-                $('#lembur').html('Rp ' + totalLembur.toLocaleString('id-ID'));
-                $('#gaji_perhari').html('Rp ' + totalTotalGajiPerhari.toLocaleString('id-ID'));
-                $('#gaji_setelah_dipotong_hari').html('Rp ' + totalGajiSetelahDipotongHari.toLocaleString('id-ID'));
-                $('#total_gaji').html('Rp ' + totalTotalGaji.toLocaleString('id-ID'));
-                $('#jkk_024').html('Rp ' + totalJkk024.toLocaleString('id-ID'));
-                $('#jkm_03').html('Rp ' + totalJkm03.toLocaleString('id-ID'));
-                $('#bpjs_4').html('Rp ' + totalBpjs4.toLocaleString('id-ID'));
-                $('#jht_37').html('Rp ' + totalJht37.toLocaleString('id-ID'));
-                $('#jpn_2').html('Rp ' + totalJpn2.toLocaleString('id-ID'));
-                $('#jpn_1').html('Rp ' + totalJpn1.toLocaleString('id-ID'));
-                $('#jht_2').html('Rp ' + totalJht2.toLocaleString('id-ID'));
-                $('#bpjs_1').html('Rp ' + totalBpjs1.toLocaleString('id-ID'));
-                $('#total_thp').html('Rp ' + total_THP.toLocaleString('id-ID'));
+                $('#gaji_pokok').html(totalGajiPokok.toLocaleString('id-ID'));
+                $('#gaji_pokok_efektif').html(totalGajiPokokEfektif.toLocaleString('id-ID'));
+                $('#tunjangan_tetap').html(totalTunjTetap.toLocaleString('id-ID'));
+                $('#tunjangan_transport').html(totalTunjTransport.toLocaleString('id-ID'));
+                $('#tunjangan_jabatan').html(totalTunjJabatan.toLocaleString('id-ID'));
+                $('#gaji_bruto').html(totalGajiBruto.toLocaleString('id-ID'));
+                $('#lembur').html(totalLembur.toLocaleString('id-ID'));
+                $('#gaji_perhari').html(totalTotalGajiPerhari.toLocaleString('id-ID'));
+                $('#gaji_setelah_dipotong_hari').html(totalGajiSetelahDipotongHari.toLocaleString('id-ID'));
+                $('#total_gaji').html(totalTotalGaji.toLocaleString('id-ID'));
+                $('#jkk_024').html(totalJkk024.toLocaleString('id-ID'));
+                $('#jkm_03').html(totalJkm03.toLocaleString('id-ID'));
+                $('#bpjs_4').html(totalBpjs4.toLocaleString('id-ID'));
+                $('#jht_37').html(totalJht37.toLocaleString('id-ID'));
+                $('#jpn_2').html(totalJpn2.toLocaleString('id-ID'));
+                $('#jpn_1').html(totalJpn1.toLocaleString('id-ID'));
+                $('#jht_2').html(totalJht2.toLocaleString('id-ID'));
+                $('#bpjs_1').html(totalBpjs1.toLocaleString('id-ID'));
+                $('#total_thp').html(total_THP.toLocaleString('id-ID'));
             }
         });
     }

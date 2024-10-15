@@ -119,40 +119,37 @@ class UserController extends Controller
     {
         try {
             DB::beginTransaction();
-    
+
             $user = User::findOrFail(decrypt($id));
-    
-            // Update user details
+
             $user->nik = $request->nik;
             $user->fullname = $request->fullname;
             $user->username = $request->username;
             $user->email = $request->email;
-    
-            // Update password if provided
+
             if ($request->filled('password')) {
                 $user->password = Hash::make($request->password);
             }
-    
-            // Update role
+
             $role = Role::find($request->role_id);
             if ($role) {
                 $user->syncRoles([$role->name]);
             }
-    
+
             $user->save();
-    
+
             DB::commit();
-    
+
             return response()->json([
                 'status' => 'success',
                 'toast' => 'User updated successfully'
-            ], 200);
+            ]);
         } catch (\Exception $e) {
             DB::rollBack();
             return response()->json([
                 'status' => 'error',
                 'toast' => 'Failed to update data: ' . $e->getMessage(),
-            ], 500);
+            ]);
         }
     }
 
@@ -175,7 +172,7 @@ class UserController extends Controller
             return response()->json([
                 'status' => 'error',
                 'toast' => 'Error server' . $e->getMessage(),
-            ], 500);
+            ]);
         }
     }
 }

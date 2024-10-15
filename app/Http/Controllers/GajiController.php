@@ -30,7 +30,7 @@ class GajiController extends Controller
             ->join('public.empcard', 'public.employee.emplo_id', '=', 'public.empcard.emplo_id')
             ->join('public.empbenefit', 'public.employee.emplo_id', '=', 'public.empbenefit.emp_id')
             ->join('payroll.gaji_details', 'public.employee.emplo_id', '=', 'payroll.gaji_details.id_karyawan')
-            ->select('public.employee.emplo_id as id_karyawan', 'public.employee.NIK as nik', 'public.employee.nama', 'public.empcompany.jabatan', 'public.empcompany.divisi_region', 'public.employee.tanggal_lahir', 'public.empbenefit.stat_ptkp', 'public.empcompany.tgl_join as tgl_masuk', 'public.riwayatkj.end_pkwt as tgl_akhir_pkwt', DB::RAW("COALESCE(public.empcard.rek_mandiri, 'public.empcard.rek_lain') as rek_final"), 'public.empcard.npwp', DB::raw("public.empbenefit.gaji_pokok + public.empbenefit.tunjangan as bruto"), 'payroll.gaji_details.gaji_pokok as gapok', 'payroll.gaji_details.tunjangan_tetap as tunj_tetap', 'payroll.gaji_details.hari_kerja','payroll.gaji_details.lembur', 'payroll.gaji_details.bpjs_4', 'payroll.gaji_details.bpjs_1', 'payroll.gaji_details.jpn_2', 'payroll.gaji_details.jpn_1', 'public.empcard.bpjskes as bpjs_kes')
+            ->select('public.employee.emplo_id as id_karyawan', 'public.employee.NIK as nik', 'public.employee.nama', 'public.empcompany.jabatan', 'public.empcompany.divisi_region', 'public.employee.tanggal_lahir', 'public.empbenefit.stat_ptkp', 'public.empcompany.tgl_join as tgl_masuk', 'public.riwayatkj.end_pkwt as tgl_akhir_pkwt', DB::RAW("COALESCE(public.empcard.rek_mandiri, 'public.empcard.rek_lain') as rek_final"), 'public.empcard.npwp', DB::raw("public.empbenefit.gaji_pokok + public.empbenefit.tunjangan as bruto"), 'payroll.gaji_details.gaji_pokok as gapok', 'payroll.gaji_details.tunjangan_tetap as tunj_tetap', 'payroll.gaji_details.hari_kerja', 'payroll.gaji_details.lembur', 'payroll.gaji_details.bpjs_4', 'payroll.gaji_details.bpjs_1', 'payroll.gaji_details.jpn_2', 'payroll.gaji_details.jpn_1', 'public.empcard.bpjskes as bpjs_kes')
             ->where('payroll.gaji_details.id_gaji', $id)
             ->where('public.empcompany.status', 'AKTIF')
             ->get();
@@ -216,12 +216,24 @@ class GajiController extends Controller
                 }
                 return 0;
             })
+            // THP
             ->addColumn('total_thp', function ($q) {
                 $gaji_details = GajiDetail::where('id_karyawan', $q->id_karyawan)->first();
                 $koreksi = $gaji_details->koreksi_gajis->sum('total');
                 $potongan = $gaji_details->potongan_gajis->sum('total');
+                $bruto = $q->bruto > 10042300 ? 10042300 : $q->bruto;
+                $bruto_bpjs = $q->bruto > 12000000 ? 12000000 : $q->bruto;
+                $bpjs_1 = $q->bpjs_kes != null ? round($bruto_bpjs * 1 / 100) : 0;
+                $jht_2 = round($q->bruto * 2 / 100);
 
-                return round(((((($q->gapok / 21) * $q->hari_kerja) + (($q->tunj_tetap / 21) * $q->hari_kerja) + 0 + $koreksi) - $potongan) + $q->lembur) - $q->jpn_1 - round($q->bruto * 2 / 100) - $q->bpjs_1);
+                $total_gaji = round((((($q->gapok / 21) * $q->hari_kerja) + (($q->tunj_tetap / 21) * $q->hari_kerja) + 0 + $koreksi) - $potongan) + $q->lembur);
+
+                // return  $q->jpn_1 ;
+                return $total_gaji - $q->jpn_1 - $jht_2 - $bpjs_1;
+
+                // \dd('Gapok', $q->gapok, 'JPN 1', $q->jpn_1, 'jht 2', $q->jht_2, 'bpjs 1', $bpjs_1);
+
+                // return round(((((($q->gapok / 21) * $q->hari_kerja) + (($q->tunj_tetap / 21) * $q->hari_kerja) + 0 + $koreksi) - $potongan)) - $q->jpn_1 - round($bruto * 2 / 100) - $bpjs_1);
             })
             ->addColumn('gaji_perhari', function ($q) {
                 return round(($q->bruto / $this->TOTAL_HARI_DEFAULT));
@@ -470,7 +482,7 @@ class GajiController extends Controller
             $gaji_bruto = (int) ($gaji->gaji_pokok / 21) * $total_hari + ($gaji->tunjangan / 21) * $total_hari;
             $bruto_jpn = $gaji_bruto > 10042300 ? 10042300 : $gaji_bruto;
             $bruto_bpjs = $gaji_bruto > 12000000 ? 12000000 : $gaji_bruto;
-            
+
 
             GajiDetail::create([
                 'id_gaji' => $newGaji->id,
@@ -504,7 +516,10 @@ class GajiController extends Controller
         try {
             $excel = Excel::download(new GajiEmployeeExport($id), 'employee-gaji-' . $waktuProses->translatedFormat('F Y') . '.xlsx');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Gagal mengunduh file.');
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage(),
+            ]);
         }
 
         return $excel;

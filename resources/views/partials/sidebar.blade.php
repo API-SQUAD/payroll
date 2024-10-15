@@ -37,7 +37,7 @@
                 </li>
                 <li>
                     <a class="<?= (strpos($_SERVER['REQUEST_URI'], 'data_karyawan')) ? 'active' : '' ?>"
-                        href="../data_karyawan/index.php"><i class="fa fa-users"></i><span
+                        href="{{ route('data_karyawan.index') }}"><i class="fa fa-users"></i><span
                             class="sidebar-mini-hide">Data Karyawan</span></a>
                 </li>
                 <li>

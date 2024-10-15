@@ -51,6 +51,7 @@ class GajiEmployeeExport implements FromCollection, WithHeadings, WithStyles, Wi
                 'payroll.gaji_details.gaji_pokok as gapok',
                 'payroll.gaji_details.tunjangan_tetap as tunj_tetap',
                 'payroll.gaji_details.hari_kerja',
+                'public.empcard.bpjskes as bpjs_kes',
             )
             ->where('payroll.gaji_details.id_gaji', $this->gaji_id)
             ->where('public.empcompany.status', 'AKTIF')
@@ -184,7 +185,7 @@ class GajiEmployeeExport implements FromCollection, WithHeadings, WithStyles, Wi
                 $koreksi = $gaji_details->koreksi_gajis->sum('total');
                 $potongan = $gaji_details->potongan_gajis->sum('total');
 
-                return round(((($emp->gapok / 21) * $emp->hari_kerja) + (($emp->tunj_tetap / 21) * $emp->hari_kerja) + 0 + $koreksi) - $potongan);
+                return round(((($emp->gapok / 21) * $emp->hari_kerja) + (($emp->tunj_tetap / 21) * $emp->hari_kerja) + 0 + $koreksi) - $potongan) + $emp->lembur;
             })($employee->id_karyawan, $employee);
 
             $employee->jkk_024 = round($employee->bruto * 0.24 / 100);
@@ -192,12 +193,15 @@ class GajiEmployeeExport implements FromCollection, WithHeadings, WithStyles, Wi
             $employee->jkm_03 = round($employee->bruto * 0.3 / 100);
 
             $employee->bpjs_4 = (function ($emp) {
-                $bruto = $emp->bruto > 12000000 ? 12000000 : $emp->bruto;
+                if ($emp->bpjs_kes != null) {
+                    $bruto = $emp->bruto > 12000000 ? 12000000 : $emp->bruto;
 
-                return round($bruto * 4 / 100);
+                    return round($bruto * 4 / 100);
+                }
+                return 0;
             })($employee);
 
-            $employee->jht_37 = round($employee->bruto * 37 / 100);
+            $employee->jht_37 = round($employee->bruto * 3.7 / 100);
 
             $employee->jpn_2 = (function ($emp) {
                 $bruto = $emp->bruto > 10042300 ? 10042300 : $emp->bruto;
@@ -214,17 +218,25 @@ class GajiEmployeeExport implements FromCollection, WithHeadings, WithStyles, Wi
             $employee->jht_2 = round($employee->bruto * 2 / 100);
 
             $employee->bpjs_1 = (function ($emp) {
-                $bruto = $emp->bruto > 12000000 ? 12000000 : $emp->bruto;
+                if ($emp->bpjs_kes != null) {
+                    $bruto = $emp->bruto > 12000000 ? 12000000 : $emp->bruto;
 
-                return round($bruto * 1 / 100);
+                    return round($bruto * 1 / 100);
+                }
+                return 0;
             })($employee);
 
             $employee->total_thp = (function ($emp) {
                 $gaji_details = GajiDetail::where('id_karyawan', $emp->id_karyawan)->first();
                 $koreksi = $gaji_details->koreksi_gajis->sum('total');
                 $potongan = $gaji_details->potongan_gajis->sum('total');
+                $bruto = $emp->bruto > 10042300 ? 10042300 : $emp->bruto;
+                $bpjs_1 = $emp->bpjs_kes != null ? round($bruto * 1 / 100) : 0;
+                $jht_2 = round($bruto * 2 / 100);
 
-                return round((((($emp->gapok / 21) * $emp->hari_kerja) + (($emp->tunj_tetap / 21) * $emp->hari_kerja) + 0 + $koreksi) - $potongan) - $emp->jpn_1 - round($emp->bruto * 2 / 100) - $emp->bpjs_1);
+                $total_gaji = round(((($emp->gapok / 21) * $emp->hari_kerja) + (($emp->tunj_tetap / 21) * $emp->hari_kerja) + 0 + $koreksi) - $potongan) + $emp->lembur;
+
+                return $total_gaji - $emp->jpn_1 - $jht_2 - $bpjs_1;
             })($employee);
 
             $data = [

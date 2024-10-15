@@ -137,7 +137,7 @@
                 [5, 10, 25, 50, 100, 250, 500, -1]
                 , [5, 10, 25, 50, 100, 250, 500, "All"]
             ]
-            , pageLength: -1
+            , pageLength: 50
             , ajax: "{{ route('users.data') }}"
             , drawCallback: function(settings) {
                 $('table#tableUsers tr').on('click', '#ubah', function(e) {
@@ -216,8 +216,8 @@
         form.find('#fullnameEdit').val(data.fullname)
         form.find('#emailEdit').val(data.email)
         form.find('#usernameEdit').val(data.username)
-        let role_id = data.roles.length ? data.roles[0].id : null; // Assuming roles is an array and you want the first role
-        form.find('#role_idEdit').val(role_id).trigger('change') // Use trigger to update Select2
+        let role_id = data.roles.length ? data.roles[0].id : null;
+        form.find('#role_idEdit').val(role_id).trigger('change')
 
         $('div#modalEdit').on('show.bs.modal', function() {
             $('div#modalEdit').off('hidden.bs.modal')
